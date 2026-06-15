@@ -1,0 +1,19 @@
+<header class="navbar">
+  <nav class="page-shell navbar__inner" aria-label="Navegacion principal">
+    <a class="navbar__brand" routerLink="/">
+      <span class="navbar__logo">
+        <img [src]="profile.logoImage" alt="Logo de Victor Torreblanca">
+      </span>
+      <strong>Victor Torreblanca</strong>
+    </a>
+
+    <div class="navbar__links">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+      <a routerLink="/about" routerLinkActive="is-active">Sobre mi</a>
+      <a routerLink="/projects" routerLinkActive="is-active">Proyectos</a>
+      <a routerLink="/contact" routerLinkActive="is-active">Contacto</a>
+    </div>
+
+    <a class="navbar__cv" [href]="profile.cvPath" download>CV</a>
+  </nav>
+</header>

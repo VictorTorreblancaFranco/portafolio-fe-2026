@@ -1,0 +1,36 @@
+<section class="section">
+  <div class="page-shell">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Proyectos</span>
+      <h1>Soluciones academicas, datos y laboratorios cloud native.</h1>
+      <p>Cards listas para editar enlaces de repositorio, demos y estados a medida que los proyectos avancen.</p>
+    </div>
+
+    <div class="projects-page__grid">
+      @for (project of projects; track project.name) {
+        <article class="card project-card">
+          <div class="project-card__header">
+            <span>{{ project.status || 'Proyecto destacado' }}</span>
+            <h2>{{ project.name }}</h2>
+          </div>
+          @if (project.role) {
+            <strong class="project-card__role">{{ project.role }}</strong>
+          }
+          <p>{{ project.description }}</p>
+          <div class="project-card__stack">
+            @for (tech of project.technologies; track tech) {
+              <span class="chip">{{ tech }}</span>
+            }
+          </div>
+          @if (project.links?.length) {
+            <div class="project-card__links">
+              @for (link of project.links; track link.url) {
+                <a class="btn" [href]="link.url" target="_blank" rel="noreferrer">{{ link.label }}</a>
+              }
+            </div>
+          }
+        </article>
+      }
+    </div>
+  </div>
+</section>

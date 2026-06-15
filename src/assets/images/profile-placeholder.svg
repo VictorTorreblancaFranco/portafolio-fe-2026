@@ -1,0 +1,9 @@
+<svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="720" rx="48" fill="#101827"/>
+  <path d="M120 582C151 466 244 391 360 391C476 391 569 466 600 582" stroke="#6EE7B7" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="360" cy="268" r="116" fill="#172235" stroke="#38BDF8" stroke-width="20"/>
+  <path d="M156 118H264" stroke="#F59E0B" stroke-width="18" stroke-linecap="round"/>
+  <path d="M456 118H564" stroke="#FB7185" stroke-width="18" stroke-linecap="round"/>
+  <path d="M184 646H536" stroke="#334155" stroke-width="16" stroke-linecap="round"/>
+  <text x="360" y="666" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">Espacio para foto personal</text>
+</svg>

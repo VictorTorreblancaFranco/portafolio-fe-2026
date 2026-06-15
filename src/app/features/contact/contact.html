@@ -1,0 +1,53 @@
+<section class="section">
+  <div class="page-shell contact-page">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Contacto</span>
+      <h1>Conversemos sobre oportunidades, practicas o proyectos de desarrollo.</h1>
+      <p>Estoy disponible para conectar por WhatsApp, LinkedIn, GitHub o correo.</p>
+    </div>
+
+    <div class="contact-page__grid">
+      <aside class="contact-page__info">
+        @if (profile.email) {
+          <article class="card">
+            <span>Correo</span>
+            <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+          </article>
+        }
+
+        <article class="card">
+          <span>WhatsApp</span>
+          <a [href]="profile.whatsappUrl" target="_blank" rel="noreferrer">+51 930 574 584</a>
+        </article>
+
+        @for (link of socialLinks; track link.label) {
+          <article class="card">
+            <span>{{ link.label }}</span>
+            <a [href]="link.url" target="_blank" rel="noreferrer">{{ link.url }}</a>
+          </article>
+        }
+      </aside>
+
+      <section class="card contact-panel" aria-label="Acciones de contacto">
+        <span>Contacto directo</span>
+        <h2>Gracias por visitar mi portafolio.</h2>
+        <p>
+          Puedes revisar mis proyectos, conectar conmigo en LinkedIn o escribirme directamente para
+          coordinar una entrevista, colaboracion o practica profesional.
+        </p>
+
+        <div class="contact-panel__actions">
+          @if (profile.whatsappUrl) {
+            <a class="btn btn--primary" [href]="profile.whatsappUrl" target="_blank" rel="noreferrer">WhatsApp</a>
+          }
+          @if (profile.email) {
+            <a class="btn" [href]="'mailto:' + profile.email">Correo</a>
+          }
+          @for (link of socialLinks; track link.label) {
+            <a class="btn" [href]="link.url" target="_blank" rel="noreferrer">{{ link.label }}</a>
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

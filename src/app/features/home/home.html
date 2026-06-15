@@ -1,0 +1,159 @@
+<section class="hero">
+  <div class="page-shell hero__grid">
+    <div class="hero__content reveal">
+      <span class="hero__status">Disponible para seguir aprendiendo y construir proyectos reales</span>
+      <h1>{{ profile.name }}</h1>
+      <h2>{{ profile.role }}</h2>
+      <p>{{ profile.summary }}</p>
+
+      <div class="hero__actions" aria-label="Acciones principales">
+        <a class="btn btn--primary" routerLink="/projects">Ver proyectos</a>
+        <a class="btn btn--accent" [href]="profile.cvPath" download>Descargar CV</a>
+        @for (link of socialLinks; track link.label) {
+          <a class="btn" [href]="link.url" target="_blank" rel="noreferrer">{{ link.label }}</a>
+        }
+      </div>
+    </div>
+
+    <div class="hero__visual reveal">
+      <div class="hero__image-frame">
+        <!-- Reemplazar src/assets/images/perfil.png si deseas actualizar la foto personal. -->
+        <img [src]="profile.profileImage" alt="Foto de Victor Raul Torreblanca Franco">
+      </div>
+      <div class="hero__metrics">
+        <span>Backend</span>
+        <span>Frontend</span>
+        <span>Microservicios</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page-shell about-band">
+    <div class="section-heading">
+      <span class="eyebrow">Sobre mi</span>
+      <h2>Formacion constante con enfoque practico.</h2>
+    </div>
+    <div class="about-band__content">
+      <p>
+        Soy estudiante de Analisis de Sistemas y desarrollador en formacion. Me interesa crear
+        aplicaciones web mantenibles, conectar servicios mediante APIs REST y entender como una
+        solucion completa pasa del codigo al despliegue.
+      </p>
+      <p>
+        Actualmente construyo experiencia real con proyectos academicos, microservicios, frontend
+        Angular, bases de datos relacionales y practicas de despliegue con contenedores.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section tech-section">
+  <div class="page-shell">
+    <div class="section-heading">
+      <span class="eyebrow">Tecnologias</span>
+      <h2>Stack en crecimiento para frontend, backend y despliegue.</h2>
+      <p>Herramientas que uso en proyectos academicos y laboratorios de practica.</p>
+    </div>
+
+    <div class="tech-grid">
+      @for (category of techCategories; track category.title) {
+        <article class="tech-card card" [class]="'tech-card--' + category.tone">
+          <h3>{{ category.title }}</h3>
+          <div class="tech-card__chips">
+            @for (item of category.items; track item) {
+              <span class="chip">{{ item }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page-shell">
+    <div class="section-heading section-heading--row">
+      <div>
+        <span class="eyebrow">Proyectos</span>
+        <h2>Trabajo academico con mirada profesional.</h2>
+      </div>
+      <a class="btn" routerLink="/projects">Ver todos</a>
+    </div>
+
+    <div class="project-grid">
+      @for (project of projects; track project.name) {
+        <article class="project-card card">
+          <div>
+            @if (project.status) {
+              <span class="project-card__status">{{ project.status }}</span>
+            }
+            <h3>{{ project.name }}</h3>
+            @if (project.role) {
+              <strong class="project-card__role">{{ project.role }}</strong>
+            }
+            <p>{{ project.description }}</p>
+          </div>
+          <div class="project-card__chips">
+            @for (tech of project.technologies; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="page-shell timeline-layout">
+    <div class="section-heading">
+      <span class="eyebrow">Experiencia / Formacion</span>
+      <h2>Aprendizaje aplicado en proyectos y laboratorios.</h2>
+    </div>
+
+    <div class="timeline">
+      @for (item of timeline; track item.title) {
+        <article class="timeline__item">
+          <span>{{ item.meta }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section certifications-preview">
+  <div class="page-shell">
+    <div class="section-heading section-heading--row">
+      <div>
+        <span class="eyebrow">Badges y certificaciones</span>
+        <h2>Logros verificados en cloud, contenedores y pensamiento de diseno.</h2>
+      </div>
+      <a class="btn" routerLink="/about">Ver detalle</a>
+    </div>
+
+    <div class="certification-grid">
+      @for (certification of certifications; track certification.title + certification.url) {
+        <a class="certification-card" [href]="certification.url" target="_blank" rel="noreferrer">
+          <span>{{ certification.category }}</span>
+          <h3>{{ certification.title }}</h3>
+          <p>{{ certification.issuer }}</p>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--compact">
+  <div class="page-shell contact-cta">
+    <div>
+      <span class="eyebrow">Contacto</span>
+      <h2>Disponible para oportunidades, practicas y colaboraciones.</h2>
+      <p>WhatsApp: +51 930 574 584</p>
+    </div>
+    <a class="btn btn--primary" routerLink="/contact">Ir a contacto</a>
+  </div>
+</section>

@@ -1,0 +1,67 @@
+<section class="section">
+  <div class="page-shell about-page">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Sobre mi</span>
+      <h1>Desarrollo software con base academica y practica constante.</h1>
+      <p>
+        {{ profile.name }} · {{ profile.shortRole }} · {{ profile.languages }}
+      </p>
+    </div>
+
+    <div class="about-page__grid">
+      <article class="card about-page__story">
+        <h2>Perfil profesional</h2>
+        <p>
+          Soy estudiante de Analisis de Sistemas y desarrollador en formacion. Mi enfoque actual
+          esta en desarrollo web, microservicios, APIs REST, frontend moderno y backend con Java,
+          Spring Boot y bases de datos.
+        </p>
+        <p>
+          Estoy construyendo experiencia real mediante proyectos academicos, laboratorios de
+          despliegue y soluciones que integran backend, frontend, contenedores y persistencia.
+        </p>
+      </article>
+
+      <aside class="card about-page__badge">
+        <span>{{ featuredCertification.issuer }}</span>
+        <h2>{{ featuredCertification.title }}</h2>
+        <p>{{ featuredCertification.description }}</p>
+        <a class="btn" [href]="featuredCertification.url" target="_blank" rel="noreferrer">
+          Ver publicacion
+        </a>
+      </aside>
+    </div>
+
+    <section class="about-page__certifications" aria-labelledby="certifications-title">
+      <div class="section-heading">
+        <span class="eyebrow">Badges y certificaciones</span>
+        <h2 id="certifications-title">Aprendizaje validado por plataformas y organizaciones.</h2>
+        <p>Enlaces directos a publicaciones y logros compartidos en LinkedIn.</p>
+      </div>
+
+      <div class="about-page__certification-grid">
+        @for (certification of certifications; track certification.title + certification.url) {
+          <article class="card certification-detail">
+            <div>
+              <span>{{ certification.category }}</span>
+              <h3>{{ certification.title }}</h3>
+              <strong>{{ certification.issuer }}</strong>
+              <p>{{ certification.description }}</p>
+            </div>
+            <a class="btn" [href]="certification.url" target="_blank" rel="noreferrer">Ver logro</a>
+          </article>
+        }
+      </div>
+    </section>
+
+    <div class="about-page__timeline">
+      @for (item of timeline; track item.title) {
+        <article>
+          <span>{{ item.meta }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
