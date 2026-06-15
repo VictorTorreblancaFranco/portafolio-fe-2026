@@ -79,6 +79,7 @@
 @media (max-width: 760px) {
   .navbar__inner {
     flex-wrap: wrap;
+    gap: 10px 14px;
     padding: 12px 0;
   }
 
@@ -89,13 +90,45 @@
   .navbar__links {
     order: 3;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     a {
       min-width: max-content;
       padding-inline: 9px;
       font-size: 0.84rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__inner {
+    min-height: auto;
+    padding: 10px 0;
+  }
+
+  .navbar__brand .navbar__logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar__cv {
+    min-width: 42px;
+    padding: 8px 11px;
+  }
+
+  .navbar__links {
+    gap: 6px;
+
+    a {
+      padding: 8px 9px;
+      font-size: 0.8rem;
     }
   }
 }

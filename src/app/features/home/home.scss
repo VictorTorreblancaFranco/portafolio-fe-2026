@@ -343,3 +343,82 @@
     padding: 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 36px 0 48px;
+  }
+
+  .hero__grid {
+    gap: 30px;
+  }
+
+  .hero__status {
+    align-items: center;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .hero__content {
+    h1 {
+      font-size: clamp(2.15rem, 13vw, 3.05rem);
+      line-height: 1.02;
+    }
+
+    h2 {
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    p {
+      margin-top: 18px;
+      font-size: 1rem;
+    }
+  }
+
+  .hero__actions {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .hero__metrics {
+    grid-template-columns: 1fr;
+
+    span {
+      min-height: 44px;
+    }
+  }
+
+  .about-band,
+  .tech-card,
+  .project-card,
+  .certification-card,
+  .contact-cta {
+    padding: 20px;
+  }
+
+  .about-band {
+    gap: 18px;
+  }
+
+  .about-band__content {
+    font-size: 0.98rem;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+
+  .certification-card {
+    min-height: auto;
+
+    span {
+      margin-bottom: 12px;
+    }
+  }
+
+  .contact-cta h2 {
+    font-size: 1.55rem;
+  }
+}

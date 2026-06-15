@@ -67,3 +67,14 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-page__info .card,
+  .contact-panel {
+    padding: 20px;
+  }
+
+  .contact-panel h2 {
+    font-size: 1.55rem;
+  }
+}

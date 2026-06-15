@@ -61,3 +61,18 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .project-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .project-card__header h2 {
+    font-size: 1.18rem;
+  }
+
+  .project-card__links {
+    flex-direction: column;
+  }
+}

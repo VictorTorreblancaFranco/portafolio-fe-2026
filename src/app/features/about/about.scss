@@ -121,3 +121,28 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .about-page__story,
+  .about-page__badge,
+  .about-page__timeline article,
+  .certification-detail {
+    padding: 20px;
+  }
+
+  .about-page__certifications {
+    margin-top: 48px;
+  }
+
+  .certification-detail {
+    min-height: auto;
+
+    h3 {
+      font-size: 1.12rem;
+    }
+
+    .btn {
+      align-self: stretch;
+    }
+  }
+}
